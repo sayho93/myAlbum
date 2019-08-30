@@ -27,6 +27,9 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
         guard let cell: AlbumCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath) as? AlbumCollectionViewCell else{
             return UICollectionViewCell()
         }
+        
+        cell.thumbImg.layer.cornerRadius = 8.0
+        
         let albumItem: AlbumModel = fetchResult[indexPath.item]
         
         let options = PHFetchOptions()

@@ -12,6 +12,7 @@ import Photos
 class PhotoViewController: UIViewController, UIScrollViewDelegate {
     var asset: PHAsset!
     let imageManager =  PHCachingImageManager()
+    var gesture = UITapGestureRecognizer()
     
     @IBOutlet var imageView: UIImageView!
     
@@ -35,7 +36,27 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
                 self.imageView.image = image
             }
         )
+        
+        gesture = UITapGestureRecognizer(target: imageView, action: #selector(PhotoViewController.gestureActivated))
+//        gesture.numberOfTapsRequired = 1
+//        gesture.numberOfTouchesRequired = 1
     }
+    
+    @objc func gestureActivated() {
+        let tap = gesture.location(in: imageView)
+        print("::::::tapped")
+        imageView.backgroundColor = .black
+        
+        if let image = imageView.image?.accessibilityFrame {
+            if !image.contains(tap) {
+                imageView.backgroundColor = .black
+            }
+            else{
+             imageView.backgroundColor = .black
+            }
+        }
+    }
+
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

@@ -248,10 +248,6 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDataSourc
         }
     }
     
-    @IBAction func sharePhotos(){
-        
-    }
-    
     func emptySelection(){
         guard let selectedItems = photoCollectionView.indexPathsForSelectedItems else{return}
         for indexPath in selectedItems {
