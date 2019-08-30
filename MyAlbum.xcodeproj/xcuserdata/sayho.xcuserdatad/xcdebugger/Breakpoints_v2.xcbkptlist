@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyAlbum/Views/StickyFooter.swift"
+            timestampString = "588224843.094613"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "updateFooter(attributes:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyAlbum.StickyFooter.__allocating_init() -&gt; MyAlbum.StickyFooter"
+                  moduleName = "MyAlbum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sayho/XcodeProjects/MyAlbum/MyAlbum/Views/StickyFooter.swift"
+                  timestampString = "588217571.5221421"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyAlbum.StickyFooter.init() -&gt; MyAlbum.StickyFooter"
+                  moduleName = "MyAlbum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sayho/XcodeProjects/MyAlbum/MyAlbum/Views/StickyFooter.swift"
+                  timestampString = "588217571.530097"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyAlbum.StickyFooter.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MyAlbum.StickyFooter&gt;"
+                  moduleName = "MyAlbum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sayho/XcodeProjects/MyAlbum/MyAlbum/Views/StickyFooter.swift"
+                  timestampString = "588217571.53414"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyAlbum.StickyFooter.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MyAlbum.StickyFooter&gt;"
+                  moduleName = "MyAlbum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sayho/XcodeProjects/MyAlbum/MyAlbum/Views/StickyFooter.swift"
+                  timestampString = "588217571.53618"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyAlbum.StickyFooter.__deallocating_deinit"
+                  moduleName = "MyAlbum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sayho/XcodeProjects/MyAlbum/MyAlbum/Views/StickyFooter.swift"
+                  timestampString = "588217571.5379781"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

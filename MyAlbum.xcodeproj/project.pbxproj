@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		114712FB22FD347E00F59227 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114712FA22FD347E00F59227 /* AlbumCollectionViewCell.swift */; };
+		1197B652230CE97900A29537 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197B651230CE97900A29537 /* PhotoCollectionViewController.swift */; };
+		1197B654230E21C100A29537 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197B653230E21C100A29537 /* PhotoCollectionViewCell.swift */; };
+		1197B65C2313634600A29537 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197B65B2313634600A29537 /* PhotoViewController.swift */; };
+		1197B65E2318B40B00A29537 /* PendingOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1197B65D2318B40B00A29537 /* PendingOperations.swift */; };
 		11D7527922FBF1F300565D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7527822FBF1F300565D3F /* AppDelegate.swift */; };
-		11D7527B22FBF1F300565D3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7527A22FBF1F300565D3F /* ViewController.swift */; };
+		11D7527B22FBF1F300565D3F /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7527A22FBF1F300565D3F /* AlbumViewController.swift */; };
 		11D7527E22FBF1F300565D3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D7527C22FBF1F300565D3F /* Main.storyboard */; };
 		11D7528022FBF1F500565D3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D7527F22FBF1F500565D3F /* Assets.xcassets */; };
 		11D7528322FBF1F500565D3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D7528122FBF1F500565D3F /* LaunchScreen.storyboard */; };
+		11D7529122FC01D700565D3F /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7529022FC01D700565D3F /* AlbumModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		114712FA22FD347E00F59227 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		1197B651230CE97900A29537 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		1197B653230E21C100A29537 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		1197B65B2313634600A29537 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		1197B65D2318B40B00A29537 /* PendingOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOperations.swift; sourceTree = "<group>"; };
 		11D7527522FBF1F300565D3F /* MyAlbum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAlbum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D7527822FBF1F300565D3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11D7527A22FBF1F300565D3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11D7527A22FBF1F300565D3F /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		11D7527D22FBF1F300565D3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11D7527F22FBF1F500565D3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11D7528222FBF1F500565D3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11D7528422FBF1F500565D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11D7529022FC01D700565D3F /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +66,68 @@
 		11D7527722FBF1F300565D3F /* MyAlbum */ = {
 			isa = PBXGroup;
 			children = (
-				11D7527822FBF1F300565D3F /* AppDelegate.swift */,
-				11D7527A22FBF1F300565D3F /* ViewController.swift */,
-				11D7527C22FBF1F300565D3F /* Main.storyboard */,
-				11D7527F22FBF1F500565D3F /* Assets.xcassets */,
-				11D7528122FBF1F500565D3F /* LaunchScreen.storyboard */,
-				11D7528422FBF1F500565D3F /* Info.plist */,
+				11D7528A22FBF26500565D3F /* Network */,
+				11D7528B22FBF26D00565D3F /* Views */,
+				11D7528C22FBF28200565D3F /* ViewControllers */,
+				11D7528D22FBF29100565D3F /* Models */,
+				11D7528E22FBF2A200565D3F /* StoryBoards */,
+				11D7528F22FBF2B000565D3F /* Others */,
 			);
 			path = MyAlbum;
+			sourceTree = "<group>";
+		};
+		11D7528A22FBF26500565D3F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		11D7528B22FBF26D00565D3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				114712FA22FD347E00F59227 /* AlbumCollectionViewCell.swift */,
+				1197B653230E21C100A29537 /* PhotoCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11D7528C22FBF28200565D3F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				11D7527A22FBF1F300565D3F /* AlbumViewController.swift */,
+				1197B651230CE97900A29537 /* PhotoCollectionViewController.swift */,
+				1197B65B2313634600A29537 /* PhotoViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		11D7528D22FBF29100565D3F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11D7529022FC01D700565D3F /* AlbumModel.swift */,
+				1197B65D2318B40B00A29537 /* PendingOperations.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11D7528E22FBF2A200565D3F /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				11D7527C22FBF1F300565D3F /* Main.storyboard */,
+				11D7528122FBF1F500565D3F /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		11D7528F22FBF2B000565D3F /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				11D7527822FBF1F300565D3F /* AppDelegate.swift */,
+				11D7527F22FBF1F500565D3F /* Assets.xcassets */,
+				11D7528422FBF1F500565D3F /* Info.plist */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +201,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11D7527B22FBF1F300565D3F /* ViewController.swift in Sources */,
+				1197B652230CE97900A29537 /* PhotoCollectionViewController.swift in Sources */,
+				114712FB22FD347E00F59227 /* AlbumCollectionViewCell.swift in Sources */,
+				11D7527B22FBF1F300565D3F /* AlbumViewController.swift in Sources */,
+				1197B65E2318B40B00A29537 /* PendingOperations.swift in Sources */,
+				11D7529122FC01D700565D3F /* AlbumModel.swift in Sources */,
+				1197B65C2313634600A29537 /* PhotoViewController.swift in Sources */,
 				11D7527922FBF1F300565D3F /* AppDelegate.swift in Sources */,
+				1197B654230E21C100A29537 /* PhotoCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +356,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MZJHE88FH;
-				INFOPLIST_FILE = MyAlbum/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MyAlbum/Others/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +374,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MZJHE88FH;
-				INFOPLIST_FILE = MyAlbum/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MyAlbum/Others/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
