@@ -237,7 +237,7 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDataSourc
                         self.toggleEditingMode()
                     }
                 }else{
-                    fatalError("dsf")
+                    return
                 }
             })
         }else{

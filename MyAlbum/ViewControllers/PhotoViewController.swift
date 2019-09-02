@@ -11,8 +11,9 @@ import Photos
 
 class PhotoViewController: UIViewController, UIScrollViewDelegate {
     var asset: PHAsset!
-    let imageManager =  PHCachingImageManager()
+    private let imageManager =  PHCachingImageManager()
     var gesture = UITapGestureRecognizer()
+    private var tapFlag = false
     
     @IBOutlet var imageView: UIImageView!
     
@@ -22,38 +23,36 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        fetchPhoto()
         self.navigationController?.hidesBarsOnTap = true
         self.navigationController?.navigationBar.isTranslucent = false
         
-        imageManager.requestImage(
-            for: asset,
-            targetSize: CGSize(width: asset.pixelWidth, height: asset.pixelHeight),
-            contentMode: .aspectFill,
-            options: nil,
-            resultHandler: {
-                image, _ in
-                self.imageView.image = image
-            }
-        )
+        fetchPhoto()
         
-        gesture = UITapGestureRecognizer(target: imageView, action: #selector(PhotoViewController.gestureActivated))
-//        gesture.numberOfTapsRequired = 1
-//        gesture.numberOfTouchesRequired = 1
+        if asset.isFavorite == true{
+           
+        }
+        
+        gesture = UITapGestureRecognizer(target: self, action: #selector(gestureActivated))
+        gesture.numberOfTapsRequired = 1
+        gesture.numberOfTouchesRequired = 1
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(gesture)
     }
     
     @objc func gestureActivated() {
         let tap = gesture.location(in: imageView)
-        print("::::::tapped")
-        imageView.backgroundColor = .black
+        let frame = imageView.accessibilityFrame
         
-        if let image = imageView.image?.accessibilityFrame {
-            if !image.contains(tap) {
-                imageView.backgroundColor = .black
+        if !frame.contains(tap){
+            self.navigationController?.setToolbarHidden(!tapFlag, animated: true)
+            self.navigationController?.setNavigationBarHidden(!tapFlag, animated: true)
+            
+            if self.tapFlag == false{
+                self.view.backgroundColor = .black
+            }else{
+                self.view.backgroundColor = .white
             }
-            else{
-             imageView.backgroundColor = .black
-            }
+            self.tapFlag = !self.tapFlag
         }
     }
 
@@ -71,6 +70,17 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
         let option = PHImageRequestOptions()
         option.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
         option.isNetworkAccessAllowed = true
+        
+        imageManager.requestImage(
+            for: asset,
+            targetSize: CGSize(width: asset.pixelWidth, height: asset.pixelHeight),
+            contentMode: .aspectFill,
+            options: nil,
+            resultHandler: {
+                image, _ in
+                self.imageView.image = image
+            }
+        )
     }
     
     @IBAction func showActivity(){
@@ -89,5 +99,20 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
             }
         }
         self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func deletePhoto(){
+        PHPhotoLibrary.shared().performChanges({
+            PHAssetChangeRequest.deleteAssets([self.asset as Any] as NSArray)
+        }, completionHandler: {(succeeded, error) -> Void in
+            if succeeded{
+                //TODO go backwards
+                OperationQueue.main.addOperation {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }else{
+                return
+            }
+        })
     }
 }

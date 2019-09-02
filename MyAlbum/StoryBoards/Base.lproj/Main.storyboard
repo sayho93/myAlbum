@@ -239,9 +239,13 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Uj8-rM-tlF"/>
-                        <barButtonItem title="Item" id="FWI-Qj-1G4"/>
+                        <barButtonItem title="Item" image="heartEmpty" id="FWI-Qj-1G4"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="trW-n8-twr"/>
-                        <barButtonItem systemItem="trash" id="ajb-xV-mdA"/>
+                        <barButtonItem systemItem="trash" id="ajb-xV-mdA">
+                            <connections>
+                                <action selector="deletePhoto" destination="p1p-kO-7Eg" id="KlO-uO-TSK"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -275,4 +279,7 @@
             <point key="canvasLocation" x="215.94202898550725" y="-544.41964285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heartEmpty" width="50" height="50"/>
+    </resources>
 </document>
