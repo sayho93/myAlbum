@@ -100,7 +100,6 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDataSourc
         
         self.navigationItem.title = "사진"
         self.navigationController?.setToolbarHidden(false, animated: false)
-        
         self.actionBarBtn.isEnabled = false
         self.trashBarBtn.isEnabled = false
         

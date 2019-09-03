@@ -13,13 +13,13 @@
         <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AlbumViewController" customModule="MyAlbum" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="AlbumViewController" customModule="MyAlbum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="302-if-z9c">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PvD-Fz-3qc">
                                     <size key="itemSize" width="193" height="288"/>
@@ -88,7 +88,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Title" id="YcH-eE-pmG"/>
                     <connections>
                         <outlet property="albumCollectionView" destination="302-if-z9c" id="gBI-Jv-bQJ"/>
@@ -102,13 +102,13 @@
         <!--Title-->
         <scene sceneID="eIE-RM-QV7">
             <objects>
-                <viewController id="nBG-vA-u1C" customClass="PhotoCollectionViewController" customModule="MyAlbum" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="nBG-vA-u1C" customClass="PhotoCollectionViewController" customModule="MyAlbum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GGn-iP-oi1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="30B-cF-xdH">
-                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lXi-y5-aJp">
                                     <size key="itemSize" width="150" height="150"/>
@@ -149,7 +149,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="30B-cF-xdH" firstAttribute="trailing" secondItem="PaL-Pv-Baz" secondAttribute="trailing" id="3VA-BS-ont"/>
-                            <constraint firstItem="30B-cF-xdH" firstAttribute="top" secondItem="PaL-Pv-Baz" secondAttribute="top" id="SYH-gU-O18"/>
+                            <constraint firstItem="30B-cF-xdH" firstAttribute="top" secondItem="GGn-iP-oi1" secondAttribute="top" id="SYH-gU-O18"/>
                             <constraint firstItem="30B-cF-xdH" firstAttribute="leading" secondItem="PaL-Pv-Baz" secondAttribute="leading" id="hJA-2s-IZs"/>
                             <constraint firstItem="30B-cF-xdH" firstAttribute="bottom" secondItem="GGn-iP-oi1" secondAttribute="bottom" id="naR-J4-F8d"/>
                         </constraints>
