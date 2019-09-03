@@ -198,7 +198,7 @@
         <!--Photo View Controller-->
         <scene sceneID="NMn-Mz-FOk">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="p1p-kO-7Eg" customClass="PhotoViewController" customModule="MyAlbum" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="p1p-kO-7Eg" customClass="PhotoViewController" customModule="MyAlbum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nrv-Qw-VaA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,7 +239,11 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Uj8-rM-tlF"/>
-                        <barButtonItem title="Item" image="heartEmpty" id="FWI-Qj-1G4"/>
+                        <barButtonItem title="Item" image="heartEmpty" id="FWI-Qj-1G4">
+                            <connections>
+                                <action selector="toggleFavor" destination="p1p-kO-7Eg" id="HKF-yI-Gjl"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="trW-n8-twr"/>
                         <barButtonItem systemItem="trash" id="ajb-xV-mdA">
                             <connections>
@@ -249,6 +253,7 @@
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="centerBtn" destination="FWI-Qj-1G4" id="oPv-72-rMd"/>
                         <outlet property="imageView" destination="hch-8G-K5n" id="vus-86-x7p"/>
                     </connections>
                 </viewController>
@@ -280,6 +285,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heartEmpty" width="50" height="50"/>
+        <image name="heartEmpty" width="25" height="25"/>
     </resources>
 </document>

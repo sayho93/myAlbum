@@ -9,28 +9,34 @@
 import UIKit
 import Photos
 
-class PhotoViewController: UIViewController, UIScrollViewDelegate {
+class PhotoViewController: UIViewController, UIScrollViewDelegate, PHPhotoLibraryChangeObserver {
     var asset: PHAsset!
     private let imageManager =  PHCachingImageManager()
     var gesture = UITapGestureRecognizer()
     private var tapFlag = false
     
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var centerBtn: UIBarButtonItem!
+    
+    var isStatusBarHidden: Bool = false
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView?{
         return self.imageView
     }
     
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        guard let photoAsset = self.asset, let changeDetails = changeInstance.changeDetails(for: photoAsset)else { return }
+        self.asset = changeDetails.objectAfterChanges
+        OperationQueue.main.addOperation {
+            self.initToolbar()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.hidesBarsOnTap = true
-        self.navigationController?.navigationBar.isTranslucent = false
-        
+        PHPhotoLibrary.shared().register(self)
         fetchPhoto()
-        
-        if asset.isFavorite == true{
-           
-        }
+        initToolbar()
         
         gesture = UITapGestureRecognizer(target: self, action: #selector(gestureActivated))
         gesture.numberOfTapsRequired = 1
@@ -39,19 +45,36 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
         imageView.addGestureRecognizer(gesture)
     }
     
+    func initToolbar(){
+        if asset.isFavorite == true{
+            self.centerBtn.image = UIImage(named: "heartFilled")
+        }else{
+            self.centerBtn.image = UIImage(named: "heartEmpty")
+        }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return self.isStatusBarHidden
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .none
+    }
+    
     @objc func gestureActivated() {
         let tap = gesture.location(in: imageView)
         let frame = imageView.accessibilityFrame
+        let currentStatus = self.tapFlag
         
         if !frame.contains(tap){
-            self.navigationController?.setToolbarHidden(!tapFlag, animated: true)
-            self.navigationController?.setNavigationBarHidden(!tapFlag, animated: true)
-            
-            if self.tapFlag == false{
-                self.view.backgroundColor = .black
-            }else{
-                self.view.backgroundColor = .white
-            }
+            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+                self.isStatusBarHidden = !self.isStatusBarHidden
+                self.setNeedsStatusBarAppearanceUpdate()
+                self.navigationController?.setToolbarHidden(!currentStatus, animated: false)
+                self.navigationController?.setNavigationBarHidden(!currentStatus, animated: false)
+                
+                self.view.backgroundColor = currentStatus == false ? .black : .white
+            }, completion: nil)
             self.tapFlag = !self.tapFlag
         }
     }
@@ -59,11 +82,10 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        if self.isMovingFromParent{
-            self.navigationController?.hidesBarsOnTap = false
-            self.navigationController?.navigationBar.isTranslucent = false
-        }
+//        if self.isMovingFromParent{
+//            self.navigationController?.hidesBarsOnTap = false
+//            self.navigationController?.navigationBar.isTranslucent = false
+//        }
     }
     
     func fetchPhoto(){
@@ -99,6 +121,21 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
             }
         }
         self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func toggleFavor(){
+        let status = self.asset.isFavorite
+
+        PHPhotoLibrary.shared().performChanges({
+            let request = PHAssetChangeRequest(for: self.asset)
+            request.isFavorite = !status
+        }, completionHandler: { succeeded, error in
+            if succeeded{
+                OperationQueue.main.addOperation {
+                    self.view.reloadInputViews()
+                }
+            }
+        })
     }
     
     @IBAction func deletePhoto(){

@@ -91,14 +91,12 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
         super.viewDidLoad()
         
         self.navigationItem.title = "앨범"
+        self.navigationController?.navigationBar.isTranslucent = true
+        
 //        self.navigationController?.navigationBar.tintColor = .white
 //        let barColor = UIColor(red: 107.0/255.0, green: 170.0/255.0, blue: 234.0/255.0, alpha: 0.5)
 //        self.navigationController?.navigationBar.barTintColor = barColor
-        
-        self.navigationController?.navigationBar.barTintColor = .lightText
 //        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        
 //        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
 //        self.navigationController?.toolbar.barTintColor = barColor
 //        self.navigationController?.setToolbarHidden(true, animated: false)
